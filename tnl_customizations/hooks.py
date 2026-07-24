@@ -183,9 +183,9 @@ app_license = "mit"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "tnl_customizations.event.get_events"
-# }
+override_whitelisted_methods = {
+    "frappe.apps.get_apps": "tnl_customizations.overrides.apps.get_apps"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -256,3 +256,11 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+fixtures = [
+    {
+        "dt": "Desktop Icon",
+        "filters": [
+            ["name", "in", ["Raven", "Frappe HR"]]
+        ]
+    }
+]
